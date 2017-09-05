@@ -1,0 +1,27 @@
+table {
+	border-collapse: collapse;
+}
+
+.header-row td {
+    text-align: center;
+    padding: 10px 50px;
+    background-color: #c6c6c6;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.body-row {
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.body-row td {
+	padding: 0px 50px;
+	height: 38px;
+    text-align: center;
+}
+
+.search-input {
+    margin-bottom: 7px;
+    padding-left: 5px;
+}

@@ -12,6 +12,7 @@ import { AppService } from './app.service';
 
 export class AppComponent {
 	tableData: TableData[];
+	query: string;
 
 	constructor(private appService: AppService){
 		this.tableData = this.appService.getTableData();
@@ -24,20 +25,13 @@ export class AppComponent {
 				this.getReversedNumber(currentTableData.age)
 			));
 			if(this.tableData.length === 8) clearInterval(intervalId);
-		},5000);
+		},60000);
 	}
 
 	sortByJoiningDate(): void {
 		this.tableData.sort((a,b) => {
 		  return +moment(a.joiningDate, 'DD/MM/YYYY').toDate() - +moment(b.joiningDate, 'DD/MM/YYYY').toDate();
 		});
-	}
-
-	searchByName(query: string): void {
-		this.tableData = this.appService.getTableData();
-		if(query.length < 1) return;
-		query = query.toLowerCase();
-		this.tableData = this.tableData.filter(x => x.name.toLowerCase().indexOf(query) >= 0);
 	}
 
 	private getReversedNumber(num: number): number {

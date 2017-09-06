@@ -1,5 +1,11 @@
 # Sd2
 
+## Features
+1) If you click on joining date column, it will sort data in ascending order w.r.t joining date.
+2) If you enter any text in input box, it will filter table data by name.
+3) The table will populate itself till 8 rows w.r.t the conditions described. 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server

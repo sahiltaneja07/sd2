@@ -1,15 +1,19 @@
 <div>
-	<input class="search-input" type="text" placeholder="search.." [(ngModel)]="query" (keyup)="searchByName(query)" />
+	<input class="search-input" type="text" placeholder="search.." [(ngModel)]="query" />
 	<table>
 	    <tr class="header-row">
-	        <td>Name</td>
-	        <td (click)="sortByJoiningDate()">Joining Date</td>
-	        <td>Age</td>
+	    	<thead>
+		        <td>Name</td>
+		        <td (click)="sortByJoiningDate()">Joining Date</td>
+		        <td>Age</td>
+	        </thead>
 	    </tr>
 	    <tr class="body-row" *ngFor="let data of tableData">
-	  	    <td>{{data.name}}</td>
-	  	    <td>{{data.joiningDate}}</td>
-	  	    <td>{{data.age}}</td>
+	    	<tbody *ngIf="query && query.length>0 && data.name.toLowerCase().indexOf(query.toLowerCase())>=0 || !query">
+		  	    <td>{{data.name}}</td>
+		  	    <td>{{data.joiningDate}}</td>
+		  	    <td>{{data.age}}</td>
+	  	    </tbody>
 	    </tr>
 	</table>
 </div>
